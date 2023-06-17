@@ -13,4 +13,5 @@ para correr el file circuito_RLC.py debes seguir las siguientes instrucciones en
 
 ```sh
 cd projects_py
+python3 circuito_RLC.py
 ```
