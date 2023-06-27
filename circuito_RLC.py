@@ -57,6 +57,7 @@ s1 = np.linspace(0, 0.3)  # se generan 50 datos en s y s1
 t1 = np.linspace(-2*c.pi, 2*c.pi, 200)
 
 
+# fasores
 def Vr(s):
     return (s*Vo).real
 
@@ -166,26 +167,27 @@ def q(t1):
     return [((Vo/modulo_Z)*(-1/w)*c.cos(w*element + pIo)).real for element in t1]
 
 
-plt.plot(Vr(s), Vi(s), 'b-')
-plt.plot(Vrf1(s1), Vif1(s1), 'b-')
-plt.plot(Vrf2(s1), Vif2(s1), 'b-')
+fig, ax = plt.subplots()
+ax.plot(Vr(s), Vi(s), 'b-')
+ax.plot(Vrf1(s1), Vif1(s1), 'b-')
+ax.plot(Vrf2(s1), Vif2(s1), 'b-')
 
-plt.plot(Ir(s), Ii(s), 'r-')
-plt.plot(Irf1(s1), Iif1(s1), 'r-')
-plt.plot(Irf2(s1), Iif2(s1), 'r-')
+ax.plot(Ir(s), Ii(s), 'r-')
+ax.plot(Irf1(s1), Iif1(s1), 'r-')
+ax.plot(Irf2(s1), Iif2(s1), 'r-')
 
-plt.plot(Zr(s), Zi(s), 'g-')
-plt.plot(Zrf1(s1), Zif1(s1), 'g-')
-plt.plot(Zrf2(s1), Zif2(s1), 'g-')
+ax.plot(Zr(s), Zi(s), 'g-')
+ax.plot(Zrf1(s1), Zif1(s1), 'g-')
+ax.plot(Zrf2(s1), Zif2(s1), 'g-')
 
-plt.plot(Ver(s), Vei(s), 'm-')
-plt.plot(Verf1(s1), Veif1(s1), 'm-')
-plt.plot(Verf2(s1), Veif2(s1), 'm-')
+ax.plot(Ver(s), Vei(s), 'm-')
+ax.plot(Verf1(s1), Veif1(s1), 'm-')
+ax.plot(Verf2(s1), Veif2(s1), 'm-')
 
-plt.xlabel('Real')
-plt.ylabel('Imaginario')
-plt.title('Voltaje: Azul;  Corriente: Rojo;  Impedancia: Verde;  Ve: Magenta')
-plt.grid(True)
+ax.set_xlabel('Real')
+ax.set_ylabel('Imaginario')
+ax.set_title('Voltaje: Azul;  Corriente: Rojo;  Impedancia: Verde;  Ve: Magenta')
+ax.grid(True)
 plt.show()
 
 
@@ -195,10 +197,13 @@ print(f'V(t): {Vo}*sin({w}*t)')
 print(f'I(t): {(Vo/modulo_Z):.2f}*sin({w:.2f}*t + {pIo:.2f})')
 print(f'Q(t): -{(Vo / (modulo_Z * w)):.2f}*cos({w:.2f}*t + {pIo:.2f})')
 
-plt.plot(t1, v(t1), 'b-')
-plt.plot(t1, i(t1), 'r-')
-plt.plot(t1, q(t1), 'k-')
+fig, axs = plt.subplots()
+axs.plot(t1, v(t1), 'b-')
+axs.plot(t1, i(t1), 'r-')
+axs.plot(t1, q(t1), 'k-')
 
-plt.title('Voltaje: Azul;  Corriente: Rojo;  Carga: Negro')
-plt.grid(True)
+axs.set_xlabel('t')
+axs.set_ylabel('V(t), I(t), Q(t)')
+axs.set_title('Voltaje: Azul;  Corriente: Rojo;  Carga: Negro')
+axs.grid(True)
 plt.show()
