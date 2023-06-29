@@ -58,99 +58,99 @@ t1 = np.linspace(-2*c.pi, 2*c.pi, 200)
 
 
 # fasores
-def Vr(s):
+def v_real(s):
     return (s*Vo).real
 
 
-def Vi(s):
+def v_imag(s):
     return (s*Vo).imag
 
 
-def Vrf1(s1):
+def v_realf1(s1):
     return (Vo + s1*c.exp(1j*(pVo + 5*(c.pi)/6))).real
 
 
-def Vif1(s1):
+def v_imagf1(s1):
     return (Vo + s1*c.exp(1j*(pVo + 5*(c.pi)/6))).imag
 
 
-def Vrf2(s1):
+def v_realf2(s1):
     return (Vo + s1*c.exp(1j*(pVo -5*(c.pi)/6))).real
 
 
-def Vif2(s1):
+def v_imagf2(s1):
     return (Vo + s1*c.exp(1j*(pVo -5*(c.pi)/6))).imag
 
 
-def Ir(s):
+def i_real(s):
     return (s*Io).real
 
 
-def Ii(s):
+def i_imag(s):
     return (s*Io).imag
 
 
-def Irf1(s1):
+def i_realf1(s1):
     return (Io + s1*c.exp(1j*(pIo + 5*(c.pi)/6))).real
 
 
-def Iif1(s1):
+def i_imagf1(s1):
     return (Io + s1*c.exp(1j*(pIo + 5*(c.pi)/6))).imag
 
 
-def Irf2(s1):
+def i_realf2(s1):
     return (Io + s1*c.exp(1j*(pIo - 5*(c.pi)/6))).real
 
 
-def Iif2(s1):
+def i_imagf2(s1):
     return (Io + s1*c.exp(1j*(pIo - 5*(c.pi)/6))).imag
 
 
-def Zr(s):
+def z_real(s):
     return (s*Z).real
 
 
-def Zi(s):
+def z_imag(s):
     return (s*Z).imag
 
 
-def Zrf1(s1):
+def z_realf1(s1):
     return (Z + s1*c.exp(1j*(pZ + 5*(c.pi)/6))).real
 
 
-def Zif1(s1):
+def z_imagf1(s1):
     return (Z + s1*c.exp(1j*(pZ + 5*(c.pi)/6))).imag
 
 
-def Zrf2(s1):
+def z_realf2(s1):
     return (Z + s1*c.exp(1j*(pZ - 5*(c.pi)/6))).real
 
 
-def Zif2(s1):
+def z_imagf2(s1):
     return (Z + s1*c.exp(1j*(pZ - 5*(c.pi)/6))).imag
 
 
-def Ver(s):
+def ve_real(s):
     return (s*Ve).real
 
 
-def Vei(s):
+def ve_imag(s):
     return (s*Ve).imag
 
 
-def Verf1(s1):
+def ve_realf1(s1):
     return (Ve + s1*c.exp(1j*(pVe + 5*(c.pi)/6))).real
 
 
-def Veif1(s1):
+def ve_imagf1(s1):
     return (Ve + s1*c.exp(1j*(pVe + 5*(c.pi)/6))).imag
 
 
-def Verf2(s1):
+def ve_realf2(s1):
     return (Ve + s1*c.exp(1j*(pVe - 5*(c.pi)/6))).real
 
 
-def Veif2(s1):
+def ve_imagf2(s1):
     return (Ve + s1*c.exp(1j*(pVe - 5*(c.pi)/6))).imag
 
 
@@ -159,7 +159,7 @@ def v(t1):
     return [(Vo*c.exp(1j*(w*element + pVo))).imag for element in t1]
 
 
-def i(t1):
+def current(t1):
     return [((Vo/modulo_Z)*c.exp(1j*(w*element + pIo))).imag for element in t1]
 
 
@@ -168,21 +168,21 @@ def q(t1):
 
 
 fig, ax = plt.subplots()
-ax.plot(Vr(s), Vi(s), 'b-')
-ax.plot(Vrf1(s1), Vif1(s1), 'b-')
-ax.plot(Vrf2(s1), Vif2(s1), 'b-')
+ax.plot(v_real(s), v_imag(s), 'b-')
+ax.plot(v_realf1(s1), v_imagf1(s1), 'b-')
+ax.plot(v_realf2(s1), v_imagf2(s1), 'b-')
 
-ax.plot(Ir(s), Ii(s), 'r-')
-ax.plot(Irf1(s1), Iif1(s1), 'r-')
-ax.plot(Irf2(s1), Iif2(s1), 'r-')
+ax.plot(i_real(s), i_imag(s), 'r-')
+ax.plot(i_realf1(s1), i_imagf1(s1), 'r-')
+ax.plot(i_realf2(s1), i_imagf2(s1), 'r-')
 
-ax.plot(Zr(s), Zi(s), 'g-')
-ax.plot(Zrf1(s1), Zif1(s1), 'g-')
-ax.plot(Zrf2(s1), Zif2(s1), 'g-')
+ax.plot(z_real(s), z_imag(s), 'g-')
+ax.plot(z_realf1(s1), z_imagf1(s1), 'g-')
+ax.plot(z_realf2(s1), z_imagf2(s1), 'g-')
 
-ax.plot(Ver(s), Vei(s), 'm-')
-ax.plot(Verf1(s1), Veif1(s1), 'm-')
-ax.plot(Verf2(s1), Veif2(s1), 'm-')
+ax.plot(ve_real(s), ve_imag(s), 'm-')
+ax.plot(ve_realf1(s1), ve_imagf1(s1), 'm-')
+ax.plot(ve_realf2(s1), ve_imagf2(s1), 'm-')
 
 ax.set_xlabel('Real')
 ax.set_ylabel('Imaginario')
@@ -194,12 +194,12 @@ plt.show()
 print('-' * 30)
 print("Fasor giratorio")
 print(f'V(t): {Vo}*sin({w}*t)')
-print(f'I(t): {(Vo/modulo_Z):.2f}*sin({w:.2f}*t + {pIo:.2f})')
+print(f'I(t): {(Vo / modulo_Z):.2f}*sin({w:.2f}*t + {pIo:.2f})')
 print(f'Q(t): -{(Vo / (modulo_Z * w)):.2f}*cos({w:.2f}*t + {pIo:.2f})')
 
 fig, axs = plt.subplots()
 axs.plot(t1, v(t1), 'b-')
-axs.plot(t1, i(t1), 'r-')
+axs.plot(t1, current(t1), 'r-')
 axs.plot(t1, q(t1), 'k-')
 
 axs.set_xlabel('t')
