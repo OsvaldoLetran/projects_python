@@ -3,15 +3,29 @@
 para correr el package calculator debes seguir las siguientes instrucciones en la terminal
 
 ```sh
+git clone
 cd calculator
 python3 main.py
 ```
 
 # Circuito RLC
 
-para correr el file circuito_RLC.py debes seguir las siguientes instrucciones en la terminal
+para correr el archivo `circuito_RLC.py` debes seguir las siguientes instrucciones en la terminal
 
 ```sh
-cd projects_py
+git clone
 python3 circuito_RLC.py
+```
+
+# Atractor de Lorenz
+
+Se trata de un sistema dinamico determinista tridimensional no lineal derivada de las ecuaciones
+simplificadas de rollos de convención que se producen en las ecuaciones dinamicas de la atmosfera
+terrestre. Es uno de los sistemas caoticos más conocidos.
+
+debes seguir las siguientes instrucciones en la terminal para ejecutar el archivo
+
+```sh
+git clone
+python3 atractor_de_lorenz.py
 ```
