@@ -54,7 +54,7 @@ print('Ve fasor:   %5.3f  %5.3f' % (modulo_Ve, pVe*180/(c.pi)))
 
 s = np.linspace(0, 1)
 s1 = np.linspace(0, 0.3)  # se generan 50 datos en s y s1
-t1 = np.linspace(-2*c.pi, 2*c.pi, 200)
+t1 = np.linspace(0, 2*c.pi, 200)
 
 
 # fasores
