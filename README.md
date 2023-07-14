@@ -1,3 +1,12 @@
+# Circuito RLC
+
+para correr el archivo `circuito_RLC.py` debes seguir las siguientes instrucciones en la terminal
+
+```sh
+git clone
+python3 circuito_RLC.py
+```
+
 # Calculator
 
 para correr el package calculator debes seguir las siguientes instrucciones en la terminal
@@ -8,13 +17,14 @@ cd calculator
 python3 main.py
 ```
 
-# Circuito RLC
+# Secret Message
 
-para correr el archivo `circuito_RLC.py` debes seguir las siguientes instrucciones en la terminal
+Si quieres encontrar un mensaje secreto o encriptar tu mensaje 
 
 ```sh
 git clone
-python3 circuito_RLC.py
+cd secrete_message
+python3 src/decrypt.py
 ```
 
 # Atractor de Lorenz
