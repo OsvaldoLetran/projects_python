@@ -20,33 +20,51 @@ def run():
         option = input(menu)
 
         if option == '1':
-            a = int(input('Ingresa un numero: '))
-            b = int(input('Ingresa un numero: '))
-            print(func_maths.addition(a, b))
+            try:
+                a = int(input('Ingresa un numero: '))
+                b = int(input('Ingresa un numero: '))
+                print(func_maths.addition(a, b))
+            except ValueError as er:
+                print(er)
             
         elif option == '2':
-            a = int(input('Ingresa un numero: '))
-            b = int(input('Ingresa un numero: '))
-            print(func_maths.subtraction(a, b))
+            try:
+                a = int(input('Ingresa un numero: '))
+                b = int(input('Ingresa un numero: '))
+                print(func_maths.subtraction(a, b))
+            except ValueError as er:
+                print(er)
             
         elif option == '3':
-            a = int(input('Ingresa un numero: '))
-            b = int(input('Ingresa un numero: '))
-            print(func_maths.multiplication(a, b))
+            try:
+                a = int(input('Ingresa un numero: '))
+                b = int(input('Ingresa un numero: '))
+                print(func_maths.multiplication(a, b))
+            except ValueError as er:
+                print(er)
             
         elif option == '4':
-            a = int(input('Ingresa un numero: '))
-            b = int(input('Ingresa un numero: '))
-            print(func_maths.division(a, b))
+            try:
+                a = int(input('Ingresa un numero: '))
+                b = int(input('Ingresa un numero: '))
+                print(func_maths.division(a, b))
+            except ValueError as er:
+                print(er)
 
         elif option == '5':
-            a = int(input('Ingresa un numero: '))
-            print(func_maths.binary_search(a))
+            try:
+                a = int(input('Ingresa un numero: '))
+                print(func_maths.binary_search(a))
+            except ValueError as er:
+                print(er)
 
         elif option == '6':
-            a = int(input('Ingresa un numero: '))
-            b = float(input('Ingresa n: '))
-            print(func_maths.potency(a, b))
+            try:
+                a = int(input('Ingresa un numero: '))
+                b = float(input('Ingresa n: '))
+                print(func_maths.potency(a, b))
+            except ValueError as er:
+                print(er)
         
         elif option == '0':
             break
