@@ -39,3 +39,12 @@ debes seguir las siguientes instrucciones en la terminal para ejecutar el archiv
 git clone
 python3 atractor_de_lorenz.py
 ```
+
+# Rock, paper or scissor game
+
+El famoso juego de piedra papel o tijera, debes seguir los siguientes pasos para ejecutar el juego
+
+```sh
+git clone
+python3 rock_paper_scissor.py
+```
