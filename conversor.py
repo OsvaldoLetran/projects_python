@@ -3,10 +3,8 @@ def conversor(tipo_pesos, valor_dolar):
     pesos = float(pesos) #convierte string a float
     dolares = pesos / valor_dolar
     dolares = round(dolares, 2) #cantidad de decimales, round(redondear)
+    # dolares = format(dolares, ".2g") #cantidad de decimales y convierte a string
     return "Tienes $" + str(dolares) + " dolares"
-    # dolares = format(dolares, ".2g") #cantidad de decimales y connvierte a string
-    # dolares = str(dolares) #str() convierte float a string
-    # print("Tienes $" + dolares + " dolares")
 
 
 def run():
@@ -18,7 +16,7 @@ def run():
     3 - pesos mexicanos
 
     Elige una opcion:
-    """   # -> multilinea String con triple comillas
+    """
     opcion = input(menu)
     if opcion == '1':
         result = conversor("colombianos", 3875)    #->invoca la funcion: voy a la definicion de la funcion y ejecuto la logica
