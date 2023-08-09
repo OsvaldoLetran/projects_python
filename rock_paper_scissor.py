@@ -1,3 +1,6 @@
+import random
+
+
 class Participant:
     def __init__(self, name):
         self.name = name
@@ -8,6 +11,11 @@ class Participant:
     def choose(self):
         self.choice = input('{name}, select rock, paper or scissor: '.format(name = self.name))
         print('{name} selects {choice}'.format(name = self.name, choice = self.choice))
+
+
+    def choose_pc(self):
+        self.choice = random.choice(['rock', 'paper', 'scissor'])
+        print(f'{self.name} selects {self.choice}')
 
 
     def to_num_choice(self):
@@ -32,7 +40,7 @@ class GameRound:
         ]
 
         p1.choose()
-        p2.choose()
+        p2.choose_pc()
         result = self.compare_choices(p1, p2)
         print('Round resulted in {result}'.format(result = self.get_result_as_string(result)))
 
