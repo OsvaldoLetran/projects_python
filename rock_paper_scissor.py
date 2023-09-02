@@ -56,10 +56,6 @@ class GameRound:
         return self.rules[p1.to_num_choice()][p2.to_num_choice()]
 
 
-    def award_points(self):
-        pass
-
-
     def get_result_as_string(self, result):
         res = {
             0 : 'draw',
@@ -105,7 +101,7 @@ class Game:
         if self.participant.points > self.two_participant.points:
             result_string = 'Winner is {name}'.format(name = self.participant.name)
         elif self.participant.points < self.two_participant.points:
-            result_string = 'Winnes is {name}'.format(name = self.two_participant.name)
+            result_string = 'Winner is {name}'.format(name = self.two_participant.name)
 
         print(result_string)
 
