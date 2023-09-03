@@ -2,8 +2,8 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=windows,linux,macos,python
 
 ### files python ###
-prim_algorythm.py
-kruskal_algorythm.py
+prim_algorithm.py
+kruskal_algorithm.py
 prim_algoritmo.txt
 person.py
 
