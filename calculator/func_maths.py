@@ -1,4 +1,7 @@
+from functools import wraps
+
 def decorador(func):
+        @wraps(func)
         def wrapper(*args, **kwargs):
             try:
                 return func(*args, **kwargs)
@@ -9,23 +12,23 @@ def decorador(func):
 class Calculator:
 
     @decorador
-    def addition(self, a: int | float, b: int | float) -> int | float:
+    def addition(self, a: float, b: float) -> float:
         return a + b
 
     @decorador
-    def subtraction(self, a: int | float, b: int | float) -> int | float:
+    def subtraction(self, a: float, b: float) -> float:
         return a - b
 
     @decorador
-    def multiplication(self, a: int | float, b: int | float) -> int | float:
+    def multiplication(self, a: float, b: float) -> float:
         return a * b
 
     @decorador
-    def division(self, a: int | float, b: int | float) -> int | float:
+    def division(self, a: float, b: float) -> float:
         return a / b if b != 0 else "Error: You cannot divide by zero"
 
     @decorador
-    def sqrt(self, a: int | float) -> int | float:
+    def sqrt(self, a: float) -> float:
     #binary search
         if a < 0:
             return "Error: No se puede calcular raíz de número negativo"
@@ -48,5 +51,5 @@ class Calculator:
         return result
 
     @decorador
-    def potency(self, a: int | float, b: int | float) -> int | float:
+    def potency(self, a: float, b: float) -> float:
         return a**b
