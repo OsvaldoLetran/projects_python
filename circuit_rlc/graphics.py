@@ -114,9 +114,9 @@ def grafica_tiempo(circ: CircuitoRLC):
     gs = GridSpec(2, 2, figure = fig, hspace = 0.45, wspace = 0.35)
     axes_data = [
         (gs[0, 0], v, COLORES["voltaje"],    "v(t)  [V]",    "Voltaje"),
-        (gs[0, 1], i, COLORES["corriente"],   "i(t)  [A]",    "Corriente"),
-        (gs[1, 0], q, COLORES["carga"],       "q(t)  [C]",    "Carga"),
-        (gs[1, 1], p, COLORES["potencia"],    "p(t)  [W]",    "Potencia"),
+        (gs[0, 1], i, COLORES["corriente"],  "i(t)  [A]",    "Corriente"),
+        (gs[1, 0], q, COLORES["carga"],      "q(t)  [C]",    "Carga"),
+        (gs[1, 1], p, COLORES["potencia"],   "p(t)  [W]",    "Potencia"),
     ]
 
     for spec, señal, color, ylabel, titulo in axes_data:
@@ -134,7 +134,6 @@ def grafica_tiempo(circ: CircuitoRLC):
         ax.set_ylabel(ylabel, fontsize = 8)
         ax.grid(True)
 
-    # plt.tight_layout()
     return fig
 
 

@@ -68,24 +68,25 @@ class CircuitoRLC:
         return self.Vo * np.sin(self.w * t + self.pVo)
 
     def corriente(self, t: np.ndarray) -> np.ndarray:
-        """i(t) = Io · sin(wt + φ_I)"""
+        """i(t) = Io · sin(wt + phi_I)"""
         return self.modulo_Io * np.sin(self.w * t + self.fase_Io)
 
     def carga(self, t: np.ndarray) -> np.ndarray:
-        """q(t) = -Io/w · cos(wt + φ_I)"""
+        """q(t) = -Io/w · cos(wt + phi_I)"""
         return -(self.modulo_Io / self.w) * np.cos(self.w * t + self.fase_Io)
 
     def potencia_instantanea(self, t: np.ndarray) -> np.ndarray:
         """p(t) = v(t) · i(t)"""
         return self.voltaje(t) * self.corriente(t)
 
-    # ── Ecuación diferencial simbólica ─────────────────────────────────────────
+    # ── Ecuación diferencial de corriente ─────────────────────────────────────────
     def ecuacion_diferencial(self, mostrar: bool = True):
-        t = symbols('t')
-        i = Function('i')(t)
+        t = symbols('t')    # definimos variable
+        i = Function('i')(t)    # definimos Funcion
         ip  = i.diff(t)
         ipp = ip.diff(t)
         eq  = self.L * ipp + self.R * ip + (1 / self.C) * i
+            #-Vo*sin(w*t + pVo)    # definimos la ED
         sol = dsolve(eq, i)
         if mostrar:
             print("Ecuación diferencial homogénea (i): ")
@@ -112,7 +113,7 @@ class CircuitoRLC:
         print(f"  Reactancia inductiva  X_L = {self.X_L:.4f} Ω")
         print(f"  Reactancia capacitiva X_C = {self.X_C:.4f} Ω")
         print(f"  Reactancia neta       X   = {self.X:.4f} Ω")
-        print(f"  Factor de potencia   cos(φ) = {self.cos_phi:.4f}")
+        print(f"  Factor de potencia cos<phi> = {self.cos_phi:.4f}")
         print(sep)
         print(f"  Frecuencia de resonancia w_o = {self.w0:.4f} rad/s")
         print(f"  Factor de calidad        Q   = {self.Q:.4f}")

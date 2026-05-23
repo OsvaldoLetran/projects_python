@@ -1,10 +1,19 @@
 # Circuito RLC
 
-para correr el archivo `circuito_RLC.py` debes seguir las siguientes instrucciones en la terminal
+Este es un análisis fasorial y temporal de un circuito RLC serie
+
+para visualizar el diagrama fasorial, que son las graficas obtenidas al ejecutar el archivo `graphics.py`, debes seguir las siguientes instrucciones en la terminal
 
 ```sh
 git clone
-python3 circuito_RLC.py
+cd circuit_rlc
+python3 graphics.py
+```
+para ingresar parametros del circuito RLC debes correr el archivo `config.py` y debes seguir las siguientes instrucciones en la terminal
+
+```sh
+cd circuit_rlc
+python3 config.py
 ```
 
 # Calculator
@@ -29,9 +38,9 @@ python3 src/decrypt.py
 
 # Atractor de Lorenz
 
-Se trata de un sistema dinamico determinista tridimensional no lineal derivada de las ecuaciones
-simplificadas de rollos de convención que se producen en las ecuaciones dinamicas de la atmosfera
-terrestre. Es uno de los sistemas caoticos más conocidos.
+Se trata de un sistema dinamico determinista tridimensional no lineal derivada de las ecuaciones simplificadas de rollos de convención que se producen en las ecuaciones dinamicas de la atmosfera terrestre. 
+
+Es uno de los sistemas caoticos más conocidos.
 
 debes seguir las siguientes instrucciones en la terminal para ejecutar el archivo
 
